@@ -99,16 +99,16 @@ const cvsFiltration = (arr) => {
 
 const vowelsFiltration = (arr) => {
     let reg = /a|e|i|u|o/
-let newArr = []
+let vowel = []
 
 let check = arr.filter(word =>{
 
   if(reg.test(word) !== true){
-    newArr.push(word)
+    vowel.push(word)
   }
 
 })
-return newArr
+return vowel
 }
 
 // 4) ---------------------
