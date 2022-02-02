@@ -110,22 +110,19 @@ const stringReverse = (str) => {
 //
 // ------------------------
 
+
+//let arr = ['James', 'Jade', 'Bailey']
 const statistics = (obj) => {
-    let arr = ['James', 'Jade', 'Bailey']
-
-    let countedNames = arr.reduce(function (voter_Name,votes_To) {
-      if (votes_To in voter_Name) {
-        voter_Name[votes_To]++
-      }
-      else {
-        voter_Name[votes_To] = 1
-      }
-      return voter_Name
-    }, {})
-    return countedNames
-}
-
-
-
+  let countedNames = obj.reduce(function (allName,name) {
+   if (name.votes_To in allName) {
+      allName[name.votes_To] +=1;
+   }
+   else {
+      allName[name.votes_To] = 1;
+   }
+   return allName;
+  }, {})
+  return countedNames;
+ }
 module.exports = { objectCounter, stringReverse, statistics };
 
