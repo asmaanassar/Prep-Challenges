@@ -19,16 +19,13 @@
 // ------------------------
 
 const LastWord = (str) => {
-    const p= 'I did my waiting 12 years of it in Azkaban';
-    const serchid = 'Azkaban';
-    const indexOfFirst = p.indexOf(serchid);
-    // let d =str.length
-    // let a = str.slice(d);
-    // let s = a.slice(-1).tostring();
-    return indexOfFirst;    
-    
     // write your code here
-}
+        let a = str.lastIndexOf(" ")+1;
+        let newstring = "";
+        for(let i=0 ; i<=a;i++) newstring = str.slice(i);
+        return newstring;
+    }
+
 
 // 2) ---------------------
 // 
@@ -39,11 +36,10 @@ const LastWord = (str) => {
 // ------------------------
 
 const LastWord_2 = (str) => {
-    let G =str.indexOf('potter');
-    let H=G.splice(-1).tostring();
-    return H;
-    // write your code here
+    let newString = str.split(" "); 
+    return newString[newString.length-1]; 
 }
+
 
 // 3) ---------------------
 // 
@@ -58,10 +54,16 @@ const LastWord_2 = (str) => {
 // ------------------------
 
 const replaceWords = (str) => {
-   const arr= str.splice(str.indexof);
-    
-    // write your code here
+    let newstatemen = str.split(" "); 
+    newstatemen = newstatemen.map((item) => {
+      if(item === 'I') item = 'We'; 
+      if(item === 'am') item = 'are'; 
+      if(item === 'was') item = 'were'; 
+      return item; 
+   }).toString().replace(',',' ');
+   return  newstatemen;
 }
+
 
 // 4) ---------------------
 // 
@@ -71,7 +73,18 @@ const replaceWords = (str) => {
 // ------------------------
 
 const arrToStr = (arr) => {
-    // write your code here
+    let newstring = ''; 
+    const a = arr.length - 1; 
+    arr.forEach((value,index) => {
+       if(index%4 === 0 && index !== 0){
+        newstring +=` ${value},` 
+       } else if (index === 0){
+        newstring += value; 
+       }else{
+        newstring += ' ' +value; 
+       }
+    });
+    return newstring; 
 }
 
 // 5) ---------------------
