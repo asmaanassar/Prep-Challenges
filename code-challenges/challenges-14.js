@@ -60,7 +60,7 @@ const replaceWords = (str) => {
       if(item === 'am') item = 'are'; 
       if(item === 'was') item = 'were'; 
       return item; 
-   }).toString().replace(',',' ');
+   }).toString().replaceAll(',',' ');
    return  newstatemen;
 }
 
