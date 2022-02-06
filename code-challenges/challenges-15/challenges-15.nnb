@@ -24,7 +24,7 @@
         {
             "language": "javascript",
             "source": [
-                "function equalizeArray(arr) {\n    \n    let array1=new Array(100).fill(0);\n    let max=0;\n    arr.forEach(item=>{\n        array1[item]++;\n        if(array1[item]>max)\n        max=array1[item];\n        \n    });\nlet minimum=arr.length-max;\nreturn minimum;\n}\n"
+                "function equalizeArray(arr) {\n    let array1=new Array(100).fill(0);\n    let max=0;\n    arr.forEach(item =>{\n        array1[item]++;\n        if(array1[item]>max)\n        max=array1[item];  \n    });\nlet minimum=arr.length-max;\nreturn minimum;\n}"
             ],
             "outputs": []
         },
@@ -45,7 +45,7 @@
         {
             "language": "javascript",
             "source": [
-                ""
+                "function howManyGames(p, d, m, s) {\n    // Return the number of games you can buy\n    let sum=0;\n    let count=0;\n    for(let i= 0;i<=100;i++)\n    {    let a=p-(d*i);\n        if(a>=m)\n        sum=sum+a;}\n    \n    return sum;\n\n}"
             ],
             "outputs": []
         },
