@@ -13,15 +13,18 @@
 // Input: 50, 9
 // Output: [50, 41, 32, 23, 14, 5, -4, 5, 14, 23, 32, 41, 50]
 //
-let array=[];
-const recursionPattern = (int1, int2) => {   
-  array.push(int1)
-    if(int1 < 0){
-      return array;   
-    }
-    recursionPattern(int1 - int2,int2);
-  array.push(int1);
-  return array;
+
+const recursionPattern = (int1, int2) => {
+  let arr1 = []; 
+  function anothRec(int1, int2){
+      arr1.push(int1)
+      if(int1<0)  
+     return arr1; 
+      anothRec(int1 - int2 , int2)
+      arr1.push(int1)
+      return arr1;  
+  }
+  return anothRec(int1, int2)
 }
 
 // -------------------------------------------------------------------------------------------------------
@@ -40,17 +43,24 @@ const recursionPattern = (int1, int2) => {
 //  Assume that links end with .com, .org or .net
 // 
 
+
+
 const filterLinks = (str) => {
-    let regex = /href\s*=\s*(['"])(https?:\/\/.+?)\1/gi;
-    let regex1 = /[com,org,net]\b/g;
-   
-    
-  if(str.match(regex) && str.match(regex1)){
-    return true
-  }else{
-    return false
-  }
- }
+  let regex =/(?:www\.|(?!www))[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]\.[^\s]{2,3}(\/\S*)?/;
+  let str1 = str.match(regex);
+  return str1[0]; 
+
+}
+
+// const filterLinks = (str) => {
+//     let regex = /href\s*=\s*(['"])(https?:\/\/.+?)\1/gi;
+//     let regex1 = /[com,org,net]\b/g;
+//   if(str.match(regex) && str.match(regex1)){
+//     return true
+//   }else{
+//     return false
+//   }
+//  }
 // -------------------------------------------------------------------------------------------------------
 
 // -------------------------------------------------------------------------------------------------------
@@ -68,8 +78,20 @@ const filterLinks = (str) => {
 //
 
 const isPalindrome = (str) => {
-    // write your code here
+  str = str.replace(/[\W_]/g, '').replaceAll(" ", "").toLowerCase();
+    console.log(str)
+    let len = str.length; 
+   for (let i = 0; i <len  / 2; i++) {  
+  
+        // validate the first and last characters are same  
+        if (str[i] !== str[len - 1 - i]) {  
+           return false; 
+        }  
+    }  
+  return true
 }
+    // write your code here
+
 // -------------------------------------------------------------------------------------------------------
 
 // -------------------------------------------------------------------------------------------------------
